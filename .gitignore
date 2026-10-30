@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Builds nativos generados
+ios/
+android/
+
+# Llaves y configuración por plataforma
+*.jks
+*.keystore
+google-services.json
+GoogleService-Info.plist
+
+# Sistema
+.DS_Store
