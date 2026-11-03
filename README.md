@@ -42,3 +42,9 @@ Fuera del MVP: login con Gmail, sincronización multi-dispositivo, sueño y fati
 1. Copia `.env.example` a `.env`.
 2. Agrega tu `GEMINI_API_KEY` en `.env`.
 3. No subas `.env` al repositorio.
+
+
+
+## Decisiones de arquitectura
+
+Las decisiones técnicas están en [docs/adr](./docs/adr).
