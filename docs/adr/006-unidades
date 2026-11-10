@@ -1,0 +1,30 @@
+# ADR-006: El peso se guarda siempre en kilogramos; kg y lb solo cambian la captura y presentación
+
+**Estado:** Aceptado
+**Fecha:** 10 nov 2026
+
+## Contexto
+
+Las máquinas de gimnasio muestran libras o kilogramos según el equipo, e incluso en un mismo gimnasio conviven ambas. Si la app solo aceptara kilogramos, el usuario tendría que convertir de cabeza en cada serie. Si guardara cada valor en la unidad con que se capturó, todos los cálculos tendrían que saber en qué unidad está cada dato, y el historial mezclaría unidades.
+
+## Decisión
+
+- La base de datos guarda el peso en kilogramos, en la columna `peso_kg`, sin redondear.
+- El volumen, las alertas, las gráficas y el progreso operan solo con kilogramos.
+- Ajustes define la unidad inicial de captura.
+- Cada campo de peso tiene su selector kg/lb. Si el usuario elige lb, la app convierte a kg con la constante exacta 1 lb = 0.45359237 kg antes de guardar. Ese selector no cambia los demás campos.
+- La unidad de visualización se puede cambiar en cualquier pantalla. Solo afecta cómo se muestran los valores, no los datos guardados.
+- El redondeo ocurre solo al mostrar el valor, nunca al guardarlo.
+- El selector de unidad forma parte de la beta.
+
+## Alternativas consideradas
+
+- **Guardar en la unidad capturada:** descartado. Obliga a convertir en cada cálculo y mezcla unidades en la base de datos.
+- **Guardar siempre en libras:** descartado. La mayoría de los gimnasios en México usa kilogramos.
+- **Redondear al guardar:** descartado. El error se acumula al editar y volver a convertir.
+
+## Consecuencias
+
+- **Positivas:** una sola unidad para cálculos y alertas. La lógica de volumen no cambia. Agregar otra unidad en el futuro no requiere migrar datos.
+- **Negativas:** hace falta una función de conversión con pruebas. El formulario de captura necesita un selector extra. El valor mostrado puede diferir ligeramente del que marca la máquina por el redondeo (por ejemplo, 60 kg a 132.5).
+- **Pruebas requeridas:** ida y vuelta (lb → kg → lb) sin cambio visible, y casos de borde como 0 y valores con decimales.
