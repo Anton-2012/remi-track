@@ -23,3 +23,29 @@ GoogleService-Info.plist
 
 # Sistema
 .DS_Store
+
+# Nativo y depuración
+.kotlin/
+*.orig.*
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Logs de depuración
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# Env locales de Expo
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Generado por Expo para tipos
+expo-env.d.ts

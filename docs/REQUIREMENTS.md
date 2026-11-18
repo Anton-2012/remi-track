@@ -1,7 +1,7 @@
 # remi-track: Documento de requisitos
 
 **Estado:** Borrador para revisión
-**Versión:** 0.4 (beta sin IA)
+**Versión:** 0.5 (beta sin IA)
 **Nombre de trabajo.** El nombre comercial se define antes de publicar.
 
 ---
@@ -84,6 +84,7 @@ La beta no envía datos fuera del teléfono.
 | RF-16 | La app debe permitir borrar todos los datos desde Ajustes, con confirmación. | Alta |
 | RF-17 | Al primer uso, la app debe mostrar el aviso de que los datos viven solo en el teléfono y el disclaimer. El usuario debe aceptarlo antes de registrar. | Alta |
 | RF-18 | Toda alerta debe mostrar el aviso: "Solo seguimiento de datos. No es consejería médica ni nutricional." | Alta |
+| RF-18 | Cada campo de peso tiene un selector kg/lb. El valor se convierte a kilogramos antes de guardarse. La unidad de visualización se puede cambiar en cualquier pantalla sin modificar los datos | Alta |
 
 ## 8. Planeado para la versión 1.1
 
@@ -133,3 +134,4 @@ La beta no envía datos fuera del teléfono.
 | 0.2 | 30 oct 2026 | Alcance MVP reducido. Sin login ni sincronización. Se agregan RIR, técnica, sensación y restricciones de datos autorreportados. |
 | 0.3 | 2 nov 2026 | Principio de diseño, lógica de sesiones, ejercicios propios, pantallas, consentimiento para Gemini, ajustes y primer uso. |
 | 0.4 | 2 nov 2026 | Beta sin IA. Resúmenes con Gemini, proxy y consentimiento pasan a la versión 1.1. La beta no envía datos fuera del teléfono. |
+| 0.5 | 10 nov 2026 | Beta sin IA / selector kg/lb. Selector kg/lb en beta en beta. Peso almacenado en kg (ADR-006) |
